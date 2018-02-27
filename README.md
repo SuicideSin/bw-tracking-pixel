@@ -6,6 +6,8 @@
 npm install
 ```
 
+And, map the host `trackingdb` to the IP of your MongoDB server
+
 ## Running
 
 To run in "production" (this will only accept referrers starting with https://stores.example.com, though it should check for valid domains in some DB)
