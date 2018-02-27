@@ -22,11 +22,18 @@ To run in "development" (this will accept any referrer and default to https://ra
 NODE_ENV=development npm start
 ```
 
-To run in Docker
+To run in Docker ("production")
 
 ```
 docker build -t systemdisc/bw-tracking-pixel https://github.com/SystemDisc/bw-tracking-pixel.git
-docker run -p 3000:3000 --add-hosts='trackingdb:127.0.0.1' -d systemdisc/bw-tracking-pixel
+docker run -p 3000:3000 --add-host='trackingdb:127.0.0.1' -d systemdisc/bw-tracking-pixel
+```
+
+To run in Docker ("development")
+
+```
+docker build -t systemdisc/bw-tracking-pixel https://github.com/SystemDisc/bw-tracking-pixel.git
+docker run -p 3000:3000 --add-host='trackingdb:127.0.0.1' -d -e NODE_ENV='development' systemdisc/bw-tracking-pixel
 ```
 
 Change `127.0.0.1` in `--add-hosts` to the IP of the MongoDB server
